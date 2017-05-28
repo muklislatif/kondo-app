@@ -1,0 +1,12 @@
+.DS_STORE
+*.log
+.happypack
+node_modules
+dist
+distServer
+coverage
+.idea/
+.vscode/
+dump.rdb
+.env
+public
