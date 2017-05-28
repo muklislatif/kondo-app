@@ -43,18 +43,21 @@
 
 .bn-link:hover .bn-icon--1,
 .bn-link:focus .bn-icon--1,
-.bn-link:active .bn-icon--1 {
+.bn-link:active .bn-icon--1,
+.bn-link.active .bn-icon--1 {
     background-image: url('./assets/bottom-nav-1-active.png');
 }
 
 .bn-link:hover .bn-icon--2,
 .bn-link:focus .bn-icon--2,
-.bn-link:active .bn-icon--2 {
+.bn-link:active .bn-icon--2,
+.bn-link.active .bn-icon--2 {
     background-image: url('./assets/bottom-nav-2-active.png');
 }
 
 .bn-link:hover .bn-icon--3,
 .bn-link:focus .bn-icon--3,
-.bn-link:active .bn-icon--3 {
+.bn-link:active .bn-icon--3,
+.bn-link.active .bn-icon--3 {
     background-image: url('./assets/bottom-nav-3-active.png');
 }

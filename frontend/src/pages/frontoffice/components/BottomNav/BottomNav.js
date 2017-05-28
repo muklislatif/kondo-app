@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 import './BottomNav.css';
-
 
 class BottomNav extends Component {
   render() {
     return (
       <div className="bottom-nav clearfix center">
         <div className="col col-4">
-          <a href="/" className="bn-link">
+          <NavLink exact to="/" activeClassName="active" className="bn-link">
             <i className="bn-icon bn-icon--1"></i>
-          </a>
+          </NavLink>
         </div>
         <div className="col col-4">
           <a href="/" className="bn-link">

@@ -15,7 +15,9 @@ import Dashboard from './pages/backoffice/Dashboard';
 class App extends Component {
   componentDidMount() {
     const splashScreen = document.getElementById('splash-screen');
-    if (splashScreen) { splashScreen.parentNode.removeChild(splashScreen) }
+    setTimeout(() => {
+      if (splashScreen) { splashScreen.parentNode.removeChild(splashScreen) }
+    }, 3000)
   }
 
   render() {

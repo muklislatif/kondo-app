@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './PostItem.css';
 import { Link } from 'react-router-dom'
 
-
 class PostItem extends Component {
   render() {
     return (
@@ -20,17 +19,17 @@ class PostItem extends Component {
           </div>
         </div>
         <h1 className="pi-subject clearfix h4">
-          subject
+          {this.props.post.subject}
         </h1>
         <p className="pi-content clearfix">
-          content
+          {this.props.post.content}
         </p>
         <div className="pi-footer clearfix">
           <div className="right">
-            <a href="/" className="pi-pinned-post">
+            <Link to="/" className="pi-pinned-post">
               <i className="pi-pinned-post__icon" />
               Pinned Post
-            </a>
+            </Link>
           </div>
         </div>
       </div>

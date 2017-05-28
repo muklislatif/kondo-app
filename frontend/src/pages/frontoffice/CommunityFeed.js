@@ -32,7 +32,7 @@ class CommunityFeed extends Component {
         <Wrapper>
           {this.state.posts.map(function(post) {
             return (
-              <PostItem key={post.id} />
+              <PostItem key={post.id} post={post} />
             );
           })}
         </Wrapper>

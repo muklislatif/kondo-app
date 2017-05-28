@@ -1,6 +1,7 @@
 .carousel {
     z-index: 10;
-    background: #CCC;
+    min-height: 90px;
+    background: #FFF;
 }
 
 .crs-brand {
