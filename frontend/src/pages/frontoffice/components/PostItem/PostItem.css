@@ -1,0 +1,67 @@
+.post-item {
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.pi-header {
+    position: relative;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.pi-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pi-author {
+    display: block;
+    width: 100%;
+}
+
+.pi-author__name {
+    margin-top: 0;
+    margin-bottom: 3px;
+    word-break: break-word;
+    font-size: 18px;
+}
+
+.pi-author__role {
+    word-break: break-word;
+    font-weight: 400;
+    font-size: 0.92em;
+}
+
+.pi-timestamps {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 400;
+}
+
+.pi-content {
+    padding-bottom: 20px;
+    font-size: 0.92em;
+}
+
+.pi-pinned-post {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.92em;
+}
+
+.pi-pinned-post__icon {
+    display: inline-block;
+    margin-right: 5px;
+    width: 15.5px;
+    height: 28.5px;
+    background-image: url('./assets/pin-icon.png');
+    background-size: 15.5px 28.5px;
+    background-repeat: no-repeat;
+    content: '';
+    vertical-align: middle;
+}

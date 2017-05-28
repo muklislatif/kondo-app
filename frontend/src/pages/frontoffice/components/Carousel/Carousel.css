@@ -1,0 +1,47 @@
+.carousel {
+    z-index: 10;
+    background: #CCC;
+}
+
+.crs-brand {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 9999px;
+    background: url('./assets/logo.png') #E6E7E8 no-repeat;
+    background-position: center center;
+    background-size: 30px 30px;
+    text-indent: -1000%;
+}
+
+.crs-inner {
+    z-index: 2;
+    background: #CCC;
+    box-shadow: 1px 5px 10px 0 rgba(0,0,0,.25);
+}
+
+.crs-inner .slick-dots {
+    bottom: 10px;
+}
+
+.crs-inner .slick-dots li {
+    margin: 0;
+}
+
+.crs-inner .slick-dots li button:before {
+    color: #CCC;
+    font-size: 10px;
+    opacity: 1;
+}
+
+.crs-inner .slick-dots li.slick-active button:before {
+    color: #03A9F4;
+}
+
+.crs-inner.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}

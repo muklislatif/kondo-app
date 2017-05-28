@@ -1,0 +1,60 @@
+.bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-top: 2px solid #F2F2F2;
+    background: #F2F2F2;
+}
+
+.bn-link {
+    display: block;
+    padding: 15px;
+    width: 100%;
+}
+
+.bn-icon {
+    display: block;
+    display: block;
+    margin: 0 auto;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+
+.bn-icon--1 {
+    background-image: url('./assets/bottom-nav-1.png');
+}
+
+.bn-icon--2 {
+    background-image: url('./assets/bottom-nav-2.png');
+}
+
+.bn-icon--3 {
+    background-image: url('./assets/bottom-nav-3.png');
+}
+
+.bn-link:hover .bn-icon--1,
+.bn-link:focus .bn-icon--1,
+.bn-link:active .bn-icon--1 {
+    background-image: url('./assets/bottom-nav-1-active.png');
+}
+
+.bn-link:hover .bn-icon--2,
+.bn-link:focus .bn-icon--2,
+.bn-link:active .bn-icon--2 {
+    background-image: url('./assets/bottom-nav-2-active.png');
+}
+
+.bn-link:hover .bn-icon--3,
+.bn-link:focus .bn-icon--3,
+.bn-link:active .bn-icon--3 {
+    background-image: url('./assets/bottom-nav-3-active.png');
+}

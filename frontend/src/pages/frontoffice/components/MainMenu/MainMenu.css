@@ -1,0 +1,120 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+
+.main-menu {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 58px;
+    list-style: none;
+}
+
+.mm-item {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    height: 125px;
+    border-right: 2px solid #F2F2F2;
+    border-bottom: 2px solid #F2F2F2;
+    text-align: left;
+    font-size: 13px;
+}
+
+.mm-item:nth-child(2n) {
+    border-right: 0;
+}
+
+.mm-table {
+    width: 70px;
+}
+
+@media (min-width: 355px) {
+    .mm-table {
+        width: 90px;
+    }
+}
+
+.mm-table-cell {
+    height: 125px;
+}
+
+.mm-icon {
+    display: block;
+    margin: 0 auto;
+    width: 55px;
+    height: 45px;
+    background-color: transparent;
+    background-size: 55px 45px;
+    background-repeat: no-repeat;
+}
+
+.mm-icon--community-feed {
+    background-image: url('./assets/main-menu-community-feed.png');
+}
+
+.mm-icon--billing-and-payment {
+    background-image: url('./assets/main-menu-billing-and-payment.png');
+}
+
+.mm-icon--help-desk {
+    background-image: url('./assets/main-menu-help-desk.png');
+}
+
+.mm-icon--service-providers {
+    background-image: url('./assets/main-menu-service-providers.png');
+}
+
+.mm-icon--monthly-report {
+    background-image: url('./assets/main-menu-monthly-report.png');
+}
+
+.mm-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    color: #4D4D4D;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.mm-link:hover,
+.mm-link:focus,
+.mm-link:active {
+    color: #03A9F4;
+    cursor: pointer;
+}
+
+.mm-link:hover .mm-icon--community-feed,
+.mm-link:focus .mm-icon--community-feed,
+.mm-link:active .mm-icon--community-feed {
+    background-image: url('./assets/main-menu-community-feed-active.png');
+}
+
+.mm-link:hover .mm-icon--billing-and-payment,
+.mm-link:focus .mm-icon--billing-and-payment,
+.mm-link:active .mm-icon--billing-and-payment {
+    background-image: url('./assets/main-menu-billing-and-payment-active.png');
+}
+
+.mm-link:hover .mm-icon--help-desk,
+.mm-link:focus .mm-icon--help-desk,
+.mm-link:active .mm-icon--help-desk {
+    background-image: url('./assets/main-menu-help-desk-active.png');
+}
+
+.mm-link:hover .mm-icon--service-providers,
+.mm-link:focus .mm-icon--service-providers,
+.mm-link:active .mm-icon--service-providers {
+    background-image: url('./assets/main-menu-service-providers-active.png');
+}
+
+.mm-link:hover .mm-icon--monthly-report,
+.mm-link:focus .mm-icon--monthly-report,
+.mm-link:active .mm-icon--monthly-report {
+    background-image: url('./assets/main-menu-monthly-report-active.png');
+}

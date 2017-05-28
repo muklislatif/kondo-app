@@ -1,0 +1,45 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    padding: 0;
+    width: 100%;;
+    border-bottom: 1px solid #E0E0E0;
+    background: #FFF;
+}
+
+.sm-icon {
+    display: block;
+    width: 15px;
+    height: 24px;
+    background-image: url('./assets/chevron-left.png');
+    background-size: 15px 24px;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+.sm-back {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    display: block;
+    float: left;
+    padding: 10px;
+    width: 40px;
+    height: 48px;
+    color: #515151;
+    text-decoration: none;
+}
+
+.sm-title {
+    position: relative;
+    display: inline-block;
+    margin: 13px auto;
+    width: 100%;
+    color: #03A9F4;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}

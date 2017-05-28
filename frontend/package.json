@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ace-css": "^1.1.0",
     "axios": "^0.16.1",
+    "normalize.css": "^7.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
+    "react-slick": "^0.14.11",
+    "slick-carousel": "^1.6.0",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0"
   },
