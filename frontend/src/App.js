@@ -1,43 +1,19 @@
-import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from './actions/actionCreators';
 
-// Front Office
-import Home from './pages/frontoffice/Home';
-import CommunityFeed from './pages/frontoffice/CommunityFeed';
+import Main from './Main';
 
-// Back Office
-import Dashboard from './pages/backoffice/Dashboard';
-
-class App extends Component {
-  componentDidMount() {
-    const splashScreen = document.getElementById('splash-screen');
-    setTimeout(() => {
-      if (splashScreen) { splashScreen.parentNode.removeChild(splashScreen) }
-    }, 3000)
-  }
-
-  render() {
-    return (
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/community-feed" component={CommunityFeed} />
-          </Switch>
-          <Switch>
-            <Route exact path="/admin" component={Dashboard} />
-            <Route path="/admin/members" component={Dashboard} />
-            <Route path="/admin/carousels" component={Dashboard} />
-            <Route path="/admin/posts" component={Dashboard} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+function mapStateToProps(state) {
+  return {
+    posts: state.posts
+  };
 }
+
+export function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+var App = connect(mapStateToProps, mapDispatchToProps)(Main);
 
 export default App;
