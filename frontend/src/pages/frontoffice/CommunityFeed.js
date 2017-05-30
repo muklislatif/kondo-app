@@ -6,23 +6,26 @@ import SideMenu from './components/SideMenu/SideMenu';
 import Wrapper from './components/Wrapper/Wrapper';
 import PostItem from './components/PostItem/PostItem';
 
+import {connect} from 'react-redux';
+import * as postActions from '../../actions/postActions';
+
 class CommunityFeed extends Component {
+
+  componentWillMount() {
+    if (this.props.posts[0] == '') {
+      this.props.actions.loadPosts();
+    }
+  }
+
   constructor(props) {
     super(props);
-    this.state = {
+    this.state ={
       posts: []
     };
   }
 
   componentDidMount() {
     var _this = this;
-    this.serverRequest = http
-      .get('http://localhost:8080/posts')
-      .then(function(result) {
-        _this.setState({
-          posts: result.data
-        });
-      })
   }
 
   render() {
@@ -41,4 +44,10 @@ class CommunityFeed extends Component {
   }
 }
 
-export default CommunityFeed;
+function mapStateToProps(state, ownProps) {
+  return {
+    posts: state.posts
+  };
+}
+
+export default connect(mapStateToProps)(CommunityFeed);

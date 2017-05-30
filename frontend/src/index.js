@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import App from './App';
+
+import { Provider } from 'react-redux'
+import configureStore from './store/configureStore';
+
 import registerServiceWorker from './registerServiceWorker';
 
-import store, { history } from './store';
+import { loadPosts } from './actions/postActions';
+
+const store = configureStore();
+
+store.dispatch(loadPosts());
 
 ReactDOM.render(
   <Provider store={store}>
-    <App history={history} />
-  </Provider>, document.getElementById('root'));
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
