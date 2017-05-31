@@ -7,11 +7,11 @@ import configureStore from './store/configureStore';
 
 import registerServiceWorker from './registerServiceWorker';
 
-import { loadPosts } from './actions/postActions';
+// import { loadPosts } from './actions/postActions';
 
 const store = configureStore();
 
-store.dispatch(loadPosts());
+// store.dispatch(loadPosts());
 
 ReactDOM.render(
   <Provider store={store}>

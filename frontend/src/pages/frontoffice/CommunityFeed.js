@@ -7,25 +7,33 @@ import Wrapper from './components/Wrapper/Wrapper';
 import PostItem from './components/PostItem/PostItem';
 
 import {connect} from 'react-redux';
-import * as postActions from '../../actions/postActions';
+// import * as postActions from '../../actions/postActions';
 
 class CommunityFeed extends Component {
 
-  componentWillMount() {
-    if (this.props.posts[0] == '') {
-      this.props.actions.loadPosts();
-    }
-  }
+  // componentWillMount() {
+  //   if (this.props.posts[0] == '') {
+  //     this.props.actions.loadPosts();
+  //   }
+  // }
 
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       posts: []
     };
   }
 
   componentDidMount() {
     var _this = this;
+    this.serverRequest = http
+      .get('/dummyApi/posts.json')
+      .then(function(result) {
+        console.log(result.data);
+        _this.setState({
+          posts: result.data
+        });
+    })
   }
 
   render() {
@@ -33,7 +41,7 @@ class CommunityFeed extends Component {
       <FrontMain>
         <SideMenu />
         <Wrapper>
-          {this.state.posts.map(function(post) {
+          {this.state.posts.map(post => {
             return (
               <PostItem key={post.id} post={post} />
             );
@@ -44,10 +52,12 @@ class CommunityFeed extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    posts: state.posts
-  };
-}
+// function mapStateToProps(state, ownProps) {
+//   return {
+//     posts: state.posts
+//   };
+// }
 
-export default connect(mapStateToProps)(CommunityFeed);
+// export default connect(mapStateToProps)(CommunityFeed);
+
+export default CommunityFeed;
