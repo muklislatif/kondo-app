@@ -27,13 +27,13 @@ class CommunityFeed extends Component {
   componentDidMount() {
     var _this = this;
     this.serverRequest = http
-      .get('/dummyApi/posts.json')
+      .get(`${process.env.REACT_APP_URL_API}/dummyApi/posts.json`)
       .then(function(result) {
         console.log(result.data);
         _this.setState({
           posts: result.data
         });
-    })
+      })
   }
 
   render() {

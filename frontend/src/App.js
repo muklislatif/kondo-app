@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={process.env.REACT_APP_URL}>
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
