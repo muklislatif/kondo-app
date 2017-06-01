@@ -1,36 +1,44 @@
 import React, { Component } from 'react';
 import './PostItem.css';
-import { Link } from 'react-router-dom'
+import Moment from 'moment';
+
+import UserMedia from '../UserMedia/UserMedia';
 
 class PostItem extends Component {
+
+  _renderPinnedPost() {
+    return (
+      <div className="right">
+        <span className="pi-pinned-post">
+          <i className="pi-pinned-post__icon" />
+          Pinned Post
+        </span>
+      </div>
+    )
+  }
+
   render() {
+    const dateTime= this.props.post.created_at;
+    const formattedDT = Moment(dateTime).startOf('hour').fromNow();
+
     return (
       <div className="post-item clearfix p2 left-align">
         <div className="pi-header clearfix">
-          <img src="http://placehold.it/50x50" alt="" className="pi-avatar" width="50" height="50" />
-          <div className="pi-author">
-            <h1 className="pi-author__name">name</h1>
-            <span className="pi-author__role">
-              user role
-            </span>
-          </div>
+          <UserMedia
+            name={this.props.post.member_name}
+            role={this.props.post.member_role}
+            avatarPath={this.props.post.member_avatar} />
           <div className="pi-timestamps">
-            <small>date</small>
+            <small>
+              {formattedDT}
+            </small>
           </div>
         </div>
-        <h1 className="pi-subject clearfix h4">
-          {this.props.post.subject}
-        </h1>
         <p className="pi-content clearfix">
           {this.props.post.content}
         </p>
         <div className="pi-footer clearfix">
-          <div className="right">
-            <Link to="/" className="pi-pinned-post">
-              <i className="pi-pinned-post__icon" />
-              Pinned Post
-            </Link>
-          </div>
+          { this.props.post.is_pinned ? this._renderPinnedPost() : '' }
         </div>
       </div>
     );

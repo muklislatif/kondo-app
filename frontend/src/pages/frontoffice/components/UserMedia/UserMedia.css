@@ -1,0 +1,29 @@
+.user-media {
+    position: relative;
+    padding-left: 60px;
+}
+
+.um-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.um-author {
+    display: block;
+    width: 100%;
+}
+
+.um-author__name {
+    margin-top: 0;
+    margin-bottom: 3px;
+    word-break: break-word;
+    font-size: 18px;
+}
+
+.um-author__role {
+    text-transform: capitalize;
+    word-break: break-word;
+    font-weight: 400;
+    font-size: 0.92em;
+}
