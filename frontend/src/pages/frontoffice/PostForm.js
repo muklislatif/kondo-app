@@ -38,7 +38,7 @@ class PostForm extends Component {
               <textarea
                 name=""
                 id=""
-                rows="30"
+                rows="15"
                 placeholder="Write something here..."
                 className='textarea textarea--full mb0 col-12'>
               </textarea>
