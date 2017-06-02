@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import http from 'axios';
 
-import FrontMain from './FrontMain';
-import SideMenu from './components/SideMenu/SideMenu';
-import Wrapper from './components/Wrapper/Wrapper';
-import PostItem from './components/PostItem/PostItem';
-import FloatingActionButton from './components/FloatingActionButton/FloatingActionButton';
+import FrontMain from '../FrontMain';
+import SideMenu from '../components/SideMenu/SideMenu';
+import Wrapper from '../components/Wrapper/Wrapper';
+import PostItem from '../components/PostItem/PostItem';
+import FloatingActionButton from '../components/FloatingActionButton/FloatingActionButton';
 
 import {connect} from 'react-redux';
 // import * as postActions from '../../actions/postActions';
@@ -30,7 +30,6 @@ class CommunityFeed extends Component {
     this.serverRequest = http
       .get(`${process.env.REACT_APP_URL_API}/dummyApi/posts.json`)
       .then(function(result) {
-        console.log(result.data);
         _this.setState({
           posts: result.data
         });

@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom'
 
 // Front Office
-import Home from './pages/frontoffice/Home';
-import CommunityFeed from './pages/frontoffice/CommunityFeed';
-import PostForm from './pages/frontoffice/PostForm';
+import Home from './pages/frontoffice/containers/Home';
+import CommunityFeed from './pages/frontoffice/containers/CommunityFeed';
+import PostForm from './pages/frontoffice/containers/PostForm';
 
 // Back Office
 import Dashboard from './pages/backoffice/Dashboard';

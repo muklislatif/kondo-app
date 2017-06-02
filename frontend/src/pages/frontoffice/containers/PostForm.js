@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import http from 'axios';
 
-import FrontMain from './FrontMain';
-import SideMenu from './components/SideMenu/SideMenu';
-import Wrapper from './components/Wrapper/Wrapper';
-import UserMedia from './components/UserMedia/UserMedia';
+import FrontMain from '../FrontMain';
+import SideMenu from '../components/SideMenu/SideMenu';
+import Wrapper from '../components/Wrapper/Wrapper';
+import UserMedia from '../components/UserMedia/UserMedia';
 
 import { Link } from 'react-router-dom'
 
