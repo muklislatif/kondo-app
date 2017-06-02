@@ -4,9 +4,10 @@ import 'ace-css/css/ace.min.css';
 import 'normalize.css';
 import '../../styles/frontoffice.css';
 
-import SideMenu from '../../components/SideMenu/SideMenu';
-import Wrapper from '../../components/Wrapper/Wrapper';
-import UserMedia from '../../components/UserMedia/UserMedia';
+import SideMenu from '../../components/SideMenu';
+import Wrapper from '../../components/Wrapper';
+import UserMedia from '../../components/UserMedia';
+import BottomNav from '../../components/BottomNav';
 
 import { Link } from 'react-router-dom'
 
@@ -41,6 +42,7 @@ class PostForm extends Component {
             </div>
           </div>
         </Wrapper>
+        <BottomNav />
       </div>
     );
   }
