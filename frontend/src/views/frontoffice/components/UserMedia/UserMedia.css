@@ -1,6 +1,7 @@
 .user-media {
     position: relative;
     padding-left: 60px;
+    min-height: 50px;
 }
 
 .um-avatar {

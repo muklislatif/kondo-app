@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
-import http from 'axios';
 
-import FrontMain from '../FrontMain';
-import SideMenu from '../components/SideMenu/SideMenu';
-import Wrapper from '../components/Wrapper/Wrapper';
-import UserMedia from '../components/UserMedia/UserMedia';
+import 'ace-css/css/ace.min.css';
+import 'normalize.css';
+import '../../styles/frontoffice.css';
+
+import SideMenu from '../../components/SideMenu/SideMenu';
+import Wrapper from '../../components/Wrapper/Wrapper';
+import UserMedia from '../../components/UserMedia/UserMedia';
 
 import { Link } from 'react-router-dom'
 
 import './PostForm.css';
 
 class PostForm extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    var _this = this;
-  }
-
   render() {
     return (
-      <FrontMain>
+      <div>
         <SideMenu target="/community-feed">
           Add Post
         </SideMenu>
@@ -31,7 +24,7 @@ class PostForm extends Component {
             <div className="clearfix">
               <UserMedia
                 name="Arian Pradana"
-                role="Owner"
+                userRole="Owner"
                 avatarPath="http://placehold.it/100x100" />
             </div>
             <div className="clearfix pt2">
@@ -48,7 +41,7 @@ class PostForm extends Component {
             </div>
           </div>
         </Wrapper>
-      </FrontMain>
+      </div>
     );
   }
 }

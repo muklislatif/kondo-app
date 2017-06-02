@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import http from 'axios';
 
-import FrontMain from '../FrontMain';
-import SideMenu from '../components/SideMenu/SideMenu';
-import Wrapper from '../components/Wrapper/Wrapper';
-import PostItem from '../components/PostItem/PostItem';
-import FloatingActionButton from '../components/FloatingActionButton/FloatingActionButton';
+import 'ace-css/css/ace.min.css';
+import 'normalize.css';
+import '../../styles/frontoffice.css';
 
-import {connect} from 'react-redux';
-// import * as postActions from '../../actions/postActions';
+import SideMenu from '../../components/SideMenu';
+import Wrapper from '../../components/Wrapper';
+import PostItem from '../../components/PostItem';
+import FloatingActionButton from '../../components/FloatingActionButton';
+import BottomNav from '../../components/BottomNav';
 
 class CommunityFeed extends Component {
-
-  // componentWillMount() {
-  //   if (this.props.posts[0] == '') {
-  //     this.props.actions.loadPosts();
-  //   }
-  // }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +32,7 @@ class CommunityFeed extends Component {
 
   render() {
     return (
-      <FrontMain>
+      <div>
         <SideMenu target="/">
           Community Feed
         </SideMenu>
@@ -52,17 +46,10 @@ class CommunityFeed extends Component {
             Add
           </FloatingActionButton>
         </Wrapper>
-      </FrontMain>
+        <BottomNav />
+      </div>
     );
   }
 }
-
-// function mapStateToProps(state, ownProps) {
-//   return {
-//     posts: state.posts
-//   };
-// }
-
-// export default connect(mapStateToProps)(CommunityFeed);
 
 export default CommunityFeed;

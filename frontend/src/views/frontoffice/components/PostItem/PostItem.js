@@ -26,7 +26,7 @@ class PostItem extends Component {
         <div className="pi-header clearfix">
           <UserMedia
             name={this.props.post.member_name}
-            role={this.props.post.member_role}
+            userRole={this.props.post.member_role}
             avatarPath={this.props.post.member_avatar} />
           <div className="pi-timestamps">
             <small>
