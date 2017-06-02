@@ -14,10 +14,12 @@ import PostForm from './views/frontoffice/routes/PostForm';
 import Dashboard from './views/backoffice/Dashboard';
 
 import createBrowserHistory from 'history/createBrowserHistory';
-const history = createBrowserHistory();
+const history = createBrowserHistory({
+  basename: process.env.REACT_APP_URL
+});
 
 const Routes = () => (
-  <Router basename={process.env.REACT_APP_URL} history={history}>
+  <Router history={history}>
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
