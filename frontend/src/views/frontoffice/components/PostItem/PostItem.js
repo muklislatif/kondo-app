@@ -19,7 +19,7 @@ class PostItem extends Component {
 
   render() {
     const dateTime= this.props.post.created_at;
-    const formattedDT = Moment(dateTime).startOf('hour').fromNow();
+    const formattedDT = Moment(dateTime).fromNow();
 
     return (
       <div className="post-item clearfix p2 left-align">
@@ -29,7 +29,7 @@ class PostItem extends Component {
             userRole={this.props.post.member_role}
             avatarPath={this.props.post.member_avatar} />
           <div className="pi-timestamps">
-            <small>
+            <small title={dateTime}>
               {formattedDT}
             </small>
           </div>

@@ -3,8 +3,11 @@ import Routes from './routes';
 
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
+import {loadPosts} from './actions/postActions';
+
 
 const store = configureStore();
+store.dispatch(loadPosts());
 
 class App extends Component {
   componentDidMount() {

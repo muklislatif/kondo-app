@@ -1,10 +1,10 @@
 import http from 'axios'
-const api = 'http://localhost:8080'
+const api = process.env.REACT_APP_URL_API;
 
 export default {
   getAllPosts: () => {
-    return http.get(`${api}/dummyApi/post.json`).then(response => {
-      return response.json();
+    return http.get(`${api}/dummyApi/posts.json`).then(response => {
+      return response.data;
     }).catch(error => {
       return error;
     });

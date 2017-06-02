@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import http from 'axios';
 
 import 'ace-css/css/ace.min.css';
 import 'normalize.css';
 import '../../styles/frontoffice.css';
+import './CommunityFeed.css';
 
 import SideMenu from '../../components/SideMenu';
 import Wrapper from '../../components/Wrapper';
@@ -11,35 +11,19 @@ import PostItem from '../../components/PostItem';
 import FloatingActionButton from '../../components/FloatingActionButton';
 import BottomNav from '../../components/BottomNav';
 
+import { connect } from 'react-redux';
+
 class CommunityFeed extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    };
-  }
-
-  componentDidMount() {
-    var _this = this;
-    this.serverRequest = http
-      .get(`${process.env.REACT_APP_URL_API}/dummyApi/posts.json`)
-      .then(function(result) {
-        _this.setState({
-          posts: result.data
-        });
-      })
-  }
-
   render() {
     return (
-      <div>
+      <div className="community-feed">
         <SideMenu target="/">
           Community Feed
         </SideMenu>
         <Wrapper>
-          {this.state.posts.map(post => {
+          {this.props.posts.map((post, i) => {
             return (
-              <PostItem key={post.id} post={post} />
+              <PostItem key={i} post={post} />
             );
           })}
           <FloatingActionButton target="/add-post">
@@ -52,4 +36,8 @@ class CommunityFeed extends Component {
   }
 }
 
-export default CommunityFeed;
+function mapStateToProps(state, ownProps) {
+  return { posts: state.posts };
+}
+
+export default connect(mapStateToProps)(CommunityFeed);;

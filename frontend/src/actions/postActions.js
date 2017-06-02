@@ -14,3 +14,7 @@ export function loadPosts() {
 export function loadPostsSuccess(posts) {
   return {type: types.LOAD_POSTS_SUCCESS, posts};
 }
+
+export function addPost(post) {
+  return {type: types.ADD_POST, post};
+}
