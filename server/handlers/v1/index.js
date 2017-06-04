@@ -20,6 +20,9 @@ function createV1Handler(dbConnection, appConfig, logger) {
     deletePost,
   } = createPostsHandler(dbConnection, appConfig, logger);
 
+  router.use(bodyParser.urlencoded({
+    extended: true,
+  }));
   router.use(bodyParser.json());
   router.use(cookieParser());
 
