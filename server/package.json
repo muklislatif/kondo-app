@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon --config config.json ./server.js",
-    "initiate": "node ./migration/initiate.js"
+    "initiate": "nodemon --config config.json ./migration/initiate.js --exitcrash"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
