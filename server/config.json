@@ -1,0 +1,19 @@
+{
+  "name": "kondo-server",
+  "env": {
+    "APP_NAME": "name",
+    "MYSQL_HOST": "localhost",
+    "MYSQL_PORT": "3306",
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWORD": "",
+    "MYSQL_DBNAME": "kondo_app",
+    "REDIS_HOST": "localhost",
+    "REDIS_PORT": "6379",
+    "PORT": "3000",
+    "NODE_ENV": "development"
+  },
+  "env_production": {
+    "PORT": "80",
+    "NODE_ENV": "production"
+  }
+}

@@ -4,10 +4,10 @@ const cors = require('cors');
 const createV1Handlers = require('./handlers/v1');
 const createErrorHandlers = require('./handlers/errorHandlers');
 
-function createApp(dbConnection, appConfig, logger) {
+function createApp(dbConnection, logger) {
   const app = express();
 
-  const v1Handlers = createV1Handlers(dbConnection, appConfig, logger);
+  const v1Handlers = createV1Handlers(dbConnection, logger);
   const { handle404, handle500 } = createErrorHandlers(logger);
 
   app.use(cors());

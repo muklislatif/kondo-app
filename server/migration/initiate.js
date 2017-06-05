@@ -1,11 +1,20 @@
-const db = require('../utils/mysqlConnector');
+const mysql = require('mysql2/promise');
 const fs = require('fs');
 const { execSync } = require('child_process');
 const Promise = require('bluebird');
 
-const config = require('../config');
-
+const { env } = JSON.parse(fs.readFileSync(`${__dirname}/../config.json`, 'utf8'));
 const migrationScript = fs.readFileSync(`${__dirname}/schema.sql`, 'utf8').split('====');
+
+const db = mysql.createPool({
+  host: env.MYSQL_HOST,
+  port: env.MYSQL_PORT,
+  user: env.MYSQL_USER,
+  password: env.MYSQL_PASSWORD,
+  database: env.MYSQL_DBNAME,
+  Promise,
+  dateStrings: true,
+});
 
 const executeSQL = query => db
   .getConnection(conn => conn.query(query))
@@ -13,7 +22,7 @@ const executeSQL = query => db
 
 const migrate = () => {
   console.log('Initiating migration...');
-  execSync(`mysql --user=${config.db.user} --password=${config.db.password} --execute="CREATE SCHEMA IF NOT EXISTS ${config.db.name}"`);
+  execSync(`mysql --user=${env.MYSQL_USER} --password=${env.MYSQL_PASSWORD} --execute="CREATE SCHEMA IF NOT EXISTS ${env.MYSQL_DBNAME}"`);
   console.log('Using the following SQL: \n');
   console.log(migrationScript);
   console.log('\n');

@@ -1,6 +1,6 @@
 const post = require('./services/post');
 
-function createPostsHandler(dbConnection, _, logger) {
+function createPostsHandler(dbConnection, logger) {
   /** Get all posts */
   const getPosts = (req, res) => post.getAllPosts()
     .then(result => res.json(result))

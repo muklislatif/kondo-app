@@ -1,4 +1,4 @@
-function createMembersHandler(dbConnection, _, logger) {
+function createMembersHandler(dbConnection, logger) {
   const getMembers = (req, res) => {
     logger.info('Receiving members');
     return res.json({ message: 'members!' });

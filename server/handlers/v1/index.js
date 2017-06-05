@@ -7,10 +7,10 @@ const createPostsHandler = require('./posts');
 
 const router = express.Router();
 
-function createV1Handler(dbConnection, appConfig, logger) {
+function createV1Handler(dbConnection, logger) {
   const {
     getMembers,
-  } = createMembersHandler(dbConnection, appConfig, logger);
+  } = createMembersHandler(dbConnection, logger);
 
   const {
     getPosts,
@@ -18,7 +18,7 @@ function createV1Handler(dbConnection, appConfig, logger) {
     createPost,
     updatePost,
     deletePost,
-  } = createPostsHandler(dbConnection, appConfig, logger);
+  } = createPostsHandler(dbConnection, logger);
 
   router.use(bodyParser.urlencoded({
     extended: true,
