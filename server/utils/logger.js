@@ -1,10 +1,12 @@
 const winston = require('winston');
+const winstonConfig = require('winston/lib/winston/config');
 const util = require('util');
 
 const consoleTransport = new winston.transports.Console({
   level: 'info',
-  timestamp: () => new Date().toString(),
   colorize: true,
+  timestamp: () => new Date().toString(),
+  formatter: opts => `${opts.timestamp()} │ ${winstonConfig.colorize(opts.level, process.pid)} │ ${winstonConfig.colorize(opts.level, opts.level.toUpperCase())} │ ${opts.message ? opts.message : ''} ${(opts.meta && Object.keys(opts.meta).length ? `\n\t${JSON.stringify(opts.meta)}` : '')}`,
 });
 const transports = [consoleTransport];
 const logger = {
