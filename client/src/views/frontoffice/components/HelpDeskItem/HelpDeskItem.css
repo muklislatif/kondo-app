@@ -1,0 +1,78 @@
+.help-desk-item {
+    position: relative;
+    margin-bottom: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hdi-header {
+    position: relative;
+    padding-right: 60px;
+    padding-left: 50px;
+    min-height: 35px;
+}
+
+.hdi-timestamps {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 7px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.hdi-timestamps small {
+    color: #4D4D4D;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.hdi-content {
+    color: #4D4D4D;
+    text-decoration: none !important;
+    font-size: 0.92em;
+}
+
+.hdi-link-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.hdi-issue-category__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 35px;
+    background: #F2F2F2;
+}
+
+.hdi--public .hdi-issue-category__icon {
+    background: #F2F2F2;
+}
+
+.hdi-issue-category__name {
+    display: inline-block;
+    margin-top: 3px;
+    padding: 2px 5px;
+    background: #F2F2F2;
+    color: #4D4D4D;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.hdi-footer {
+    color: #4D4D4D;
+    font-size: 12px;
+}
+
+.hdi--in-progress .hdi-issue-category__name,
+.hdi--in-progress .hdi-content,
+.hdi--in-progress .hdi-timestamps small,
+.hdi--in-progress .hdi-footer {
+    color: #03A9F4;
+}

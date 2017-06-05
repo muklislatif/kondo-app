@@ -1,0 +1,27 @@
+.hdd-timestamps {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #4D4D4D;
+    font-weight: 400;
+}
+
+.hdd-detail-item {
+    position: relative;
+    padding-left: 60px;
+}
+
+.hdd-dropcaps {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: 2em;
+}
+
+.hdd-detail-timestamps {
+    margin: 0;
+    padding-top: 0;
+    color: #4D4D4D;
+    font-weight: 400;
+    font-size: 11px;
+}

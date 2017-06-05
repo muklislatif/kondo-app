@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Routes from './routes';
 
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import {loadPosts} from './actions/postActions';
-
+import { loadPosts } from './actions/postActions';
+import { loadHelpDesks } from './actions/helpDeskActions';
 
 const store = configureStore();
 store.dispatch(loadPosts());
+store.dispatch(loadHelpDesks());
 
 class App extends Component {
   componentDidMount() {

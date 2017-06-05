@@ -2,10 +2,11 @@
 
 import { combineReducers } from 'redux';
 import posts from './postReducer';
+import helpDesks from './helpDeskReducer';
 
 const rootReducer = combineReducers({
-  // short hand property names
-  posts
-})
+  posts,
+  helpDesks,
+});
 
 export default rootReducer;

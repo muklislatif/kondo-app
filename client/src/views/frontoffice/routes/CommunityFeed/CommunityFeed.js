@@ -40,4 +40,4 @@ function mapStateToProps(state, ownProps) {
   return { posts: state.posts };
 }
 
-export default connect(mapStateToProps)(CommunityFeed);;
+export default connect(mapStateToProps)(CommunityFeed);

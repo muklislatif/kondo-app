@@ -38,7 +38,7 @@ class MainMenu extends Component {
           </a>
         </li>
         <li className="mm-item">
-          <a href="/" className="mm-link">
+          <Link to="/help-desk" className="mm-link">
             <div className="inline-block align-middle">
               <div className="mm-table table center">
                 <div className="mm-table-cell table-cell align-middle col-12">
@@ -50,7 +50,7 @@ class MainMenu extends Component {
               Help
               <br/> Desk
             </div>
-          </a>
+          </Link>
         </li>
         <li className="mm-item">
           <a href="/" className="mm-link">

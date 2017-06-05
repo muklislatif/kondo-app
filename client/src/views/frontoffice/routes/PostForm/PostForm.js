@@ -71,4 +71,4 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);;
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

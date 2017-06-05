@@ -1,3 +1,5 @@
 export default {
-  posts: []
-}
+  posts: [],
+  helpDesks: [],
+  helpDeskDetail: {},
+};
