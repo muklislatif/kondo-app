@@ -7,7 +7,7 @@ const createPostsHandler = require('./posts');
 
 const router = express.Router();
 
-function createV1Handler(dbConnection, appConfig, logger) {
+function createV1Handler({ dbConnection, redisConnection }, appConfig, logger) {
   const {
     getMembers,
   } = createMembersHandler(dbConnection, appConfig, logger);
