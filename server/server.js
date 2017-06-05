@@ -16,8 +16,12 @@ appState.on('ready', () => {
   const httpServer = http.createServer(app);
 
   httpServer.listen(config.port, (err) => {
-    if (err) logger.error(err);
-    else logger.info(`Application running on ${config.port}`);
+    if (err) {
+      logger.error(err);
+    } else {
+      logger.info(`Application running on ${config.port}`);
+      process.send('ready');
+    }
   });
 });
 
