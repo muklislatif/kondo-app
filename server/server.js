@@ -20,8 +20,7 @@ appState.on('ready', () => {
       logger.error(err);
     } else {
       logger.info(`Application running on ${PORT}`);
-      process.send = process.send || function () {};
-      process.send('ready');
+      process.send && process.send('ready'); // eslint-disable-line
     }
   });
 });
