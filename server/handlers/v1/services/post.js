@@ -1,9 +1,11 @@
 const db = require('../../../utils/mysqlConnector');
 
-module.exports = {
-  getAllPosts: () => db.getConnection(conn => conn.query('SELECT * FROM posts')),
-  getPostById: id => db.getConnection(conn => conn.query('SELECT * FROM posts WHERE id=?', [id])),
-  createPost: (subject, content) => db.getConnection(conn => conn.query('INSERT INTO posts VALUES(NULL, ?, ?, DEFAULT, DEFAULT)', [subject, content])),
-  updatePost: (id, subject, content) => db.getConnection(conn => conn.query('UPDATE posts SET ? WHERE id = ?', [{ subject, content }, id])),
-  deletePost: id => db.getConnection(conn => conn.query('DELETE FROM posts WHERE id = ?', [id])),
-};
+exports.getAllPosts = () => db.getConnection().then(conn => conn.query('SELECT * FROM posts'));
+
+exports.getPostById = id => db.getConnection().then(conn => conn.query('SELECT * FROM posts WHERE id=?', [id]));
+
+exports.createPost = (subject, content) => db.getConnection().then(conn => conn.query('INSERT INTO posts VALUES(NULL, ?, ?, DEFAULT, DEFAULT)', [subject, content]));
+
+exports.updatePost = (id, subject, content) => db.getConnection().then(conn => conn.query('UPDATE posts SET ? WHERE id = ?', [{ subject, content }, id]));
+
+exports.deletePost = id => db.getConnection().then(conn => conn.query('DELETE FROM posts WHERE id = ?', [id]));

@@ -58,4 +58,4 @@ const createAppState = (resourceNames) => {
   };
 };
 
-module.exports = createAppState(['KONDO_API', 'MYSQL', 'REDIS']);
+module.exports = createAppState(['KONDO_API', 'MYSQL']);

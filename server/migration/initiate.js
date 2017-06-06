@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 const db = require('../utils/mysqlConnector');
 const { logger } = require('../utils/logger');
 
-const migrationScript = fs.readFileSync(`${__dirname}/schema.sql`, 'utf8').split('====');
+const migrationScript = fs.readFileSync(`${__dirname}/schema.sql`, 'utf8').split('####');
 
 const executeSQL = (query, idx, length) => db
   .getConnection()

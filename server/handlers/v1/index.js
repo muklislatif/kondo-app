@@ -2,41 +2,33 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-const createMembersHandler = require('./members');
-const createPostsHandler = require('./posts');
+const {
+  getMembers,
+} = require('./members');
+const {
+  getPosts,
+  getPostById,
+  createPost,
+  updatePost,
+  deletePost,
+} = require('./posts');
 
 const router = express.Router();
 
-function createV1Handler({ dbConnection, redisConnection }, logger) {
-  const {
-    getMembers,
-  } = createMembersHandler(dbConnection, logger);
+router.use(bodyParser.urlencoded({
+  extended: true,
+}));
+router.use(bodyParser.json());
+router.use(cookieParser());
 
-  const {
-    getPosts,
-    getPostById,
-    createPost,
-    updatePost,
-    deletePost,
-  } = createPostsHandler(dbConnection, logger);
+/** members */
+router.get('/members', getMembers);
 
-  router.use(bodyParser.urlencoded({
-    extended: true,
-  }));
-  router.use(bodyParser.json());
-  router.use(cookieParser());
+/** posts */
+router.get('/posts', getPosts);
+router.get('/post/:id', getPostById);
+router.post('/post', createPost);
+router.post('/post/:id', updatePost);
+router.delete('/post/:id', deletePost);
 
-  /** members */
-  router.get('/members', getMembers);
-
-  /** posts */
-  router.get('/posts', getPosts);
-  router.get('/post/:id', getPostById);
-  router.post('/post', createPost);
-  router.post('/post/:id', updatePost);
-  router.delete('/post/:id', deletePost);
-
-  return router;
-}
-
-module.exports = createV1Handler;
+module.exports = router;

@@ -1,13 +1,8 @@
 const http = require('http');
 
-const dbConnection = require('./utils/mysqlConnector');
-const redisConnection = require('./utils/redisClient');
+const app = require('./app');
 const appState = require('./utils/appState');
 const { logger } = require('./utils/logger');
-
-const createApp = require('./app');
-
-const app = createApp({ dbConnection, redisConnection }, logger);
 
 appState.setReady('KONDO_API');
 

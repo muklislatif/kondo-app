@@ -1,11 +1,6 @@
-function createMembersHandler(dbConnection, logger) {
-  const getMembers = (req, res) => {
-    logger.info('Receiving members');
-    return res.json({ message: 'members!' });
-  };
-  return {
-    getMembers,
-  };
-}
+const { logger } = require('../../utils/logger');
 
-module.exports = createMembersHandler;
+exports.getMembers = (req, res) => {
+  logger.info('Receiving members');
+  return res.json({ message: 'members!' });
+};
