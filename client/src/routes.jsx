@@ -2,8 +2,9 @@ import React from 'react';
 import {
   Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 // Front Office
 import Home from './views/frontoffice/routes/Home';
@@ -16,9 +17,8 @@ import IssueForm from './views/frontoffice/routes/IssueForm';
 // Back Office
 import Dashboard from './views/backoffice/Dashboard';
 
-import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory({
-  basename: process.env.REACT_APP_URL
+  basename: process.env.REACT_APP_URL,
 });
 
 const Routes = () => (

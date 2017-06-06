@@ -1,12 +1,11 @@
-import http from 'axios'
+import http from 'axios';
+
 const api = process.env.REACT_APP_URL_API;
 
 export default {
-  getAllHelpDesks: () => {
-    return http.get(`${api}/dummyApi/helpDesks.json`).then(response => {
-      return response.data;
-    }).catch(error => {
-      return error;
-    });
-  }
-}
+  getAllHelpDesks: () => (
+    http.get(`${api}/dummyApi/helpDesks.json`)
+      .then(response => response.data)
+      .catch(error => error)
+  ),
+};
