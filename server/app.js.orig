@@ -4,17 +4,10 @@ const cors = require('cors');
 const createV1Handlers = require('./handlers/v1');
 const createErrorHandlers = require('./handlers/errorHandlers');
 
-<<<<<<< HEAD
-function createApp(dbConnection, logger) {
+function createApp({ dbConnection, redisConnection }, logger) {
   const app = express();
 
-  const v1Handlers = createV1Handlers(dbConnection, logger);
-=======
-function createApp({ dbConnection, redisConnection }, appConfig, logger) {
-  const app = express();
-
-  const v1Handlers = createV1Handlers({ dbConnection, redisConnection }, appConfig, logger);
->>>>>>> origin/feature/server/graceful-shutdown
+  const v1Handlers = createV1Handlers({ dbConnection, redisConnection }, logger);
   const { handle404, handle500 } = createErrorHandlers(logger);
 
   app.use(cors());
