@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "category": "House Keeping",
+    "content": "The corridors have not been cleaned today.",
+    "status": "requested",
+    "is_public": true,
+    "member_name": "Brian Yogie",
+    "created_at": "2017-05-29T07:19:54.000Z",
+    "updated_at": null
+  },
+  {
+    "id": 2,
+    "category": "Maintenance",
+    "content": "My apartment is out of electricity. Pls help.",
+    "status": "in-progress",
+    "is_public": false,
+    "member_name": "John Doe",
+    "created_at": "2017-05-29T07:19:54.000Z",
+    "updated_at": "2017-05-30T08:19:54.000Z"
+  },
+  {
+    "id": 3,
+    "category": "Maintenance",
+    "content": "Lorem ipsum.",
+    "status": "completed",
+    "is_public": true,
+    "member_name": "Brian Yogie",
+    "created_at": "2017-05-29T07:19:54.000Z",
+    "updated_at": "2017-05-30T08:19:54.000Z"
+  },
+  {
+    "id": 4,
+    "category": "Maintenance",
+    "content": "Lorem ipsum dolor sit amet.",
+    "status": "completed",
+    "is_public": false,
+    "member_name": "John Doe",
+    "created_at": "2017-05-29T07:19:54.000Z",
+    "updated_at": "2017-05-30T08:19:54.000Z"
+  }
+]
