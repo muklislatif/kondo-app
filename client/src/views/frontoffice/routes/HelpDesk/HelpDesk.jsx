@@ -35,7 +35,7 @@ class HelpDesk extends Component {
         </SideMenu>
         <Wrapper>
           <Tabs
-            className="tab"
+            className="help-desk"
             selectedIndex={this.state.tabIndex}
             selectedTabClassName="tab__list-item--active"
             onSelect={tabIndex => this.setState({ tabIndex })}
@@ -65,7 +65,7 @@ class HelpDesk extends Component {
               }
             </TabPanel>
           </Tabs>
-          <FloatingActionButton target="/">
+          <FloatingActionButton target="/add-issue">
             Add
           </FloatingActionButton>
         </Wrapper>

@@ -42,13 +42,13 @@ class PostForm extends Component {
               <div className="clearfix pt2">
                 <textarea
                   name=""
-                  ref={node => {
+                  ref={(node) => {
                     this.input = node;
                   }}
                   id=""
                   rows="10"
                   placeholder="Write something here..."
-                  className='textarea textarea--full mb0 col-12'>
+                  className="textarea textarea--full mb0 col-12">
                 </textarea>
               </div>
               <div className="action-container--stick-bottom clearfix p2">

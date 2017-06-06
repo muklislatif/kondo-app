@@ -1,5 +1,6 @@
 .help-desk-item {
     position: relative;
+    display: block;
     margin-bottom: 10px;
     background: #FFF;
     box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.1);
@@ -73,9 +74,9 @@
     font-size: 12px;
 }
 
-.hdi--in-progress .hdi-issue-category__name,
-.hdi--in-progress .hdi-content,
-.hdi--in-progress .hdi-timestamps small,
-.hdi--in-progress .hdi-footer {
+.help-desk-item:hover .hdi-issue-category__name,
+.help-desk-item:hover .hdi-content,
+.help-desk-item:hover .hdi-timestamps small,
+.help-desk-item:hover .hdi-footer {
     color: #03A9F4;
 }

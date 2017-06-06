@@ -11,6 +11,7 @@ import CommunityFeed from './views/frontoffice/routes/CommunityFeed';
 import PostForm from './views/frontoffice/routes/PostForm';
 import HelpDesk from './views/frontoffice/routes/HelpDesk';
 import HelpDeskDetail from './views/frontoffice/routes/HelpDeskDetail';
+import IssueForm from './views/frontoffice/routes/IssueForm';
 
 // Back Office
 import Dashboard from './views/backoffice/Dashboard';
@@ -29,6 +30,7 @@ const Routes = () => (
         <Route path="/add-post" component={PostForm} />
         <Route exact path="/help-desk" component={HelpDesk} />
         <Route path="/help-desk/:id" component={HelpDeskDetail} />
+        <Route path="/add-issue" component={IssueForm} />
       </Switch>
       <Switch>
         <Route exact path="/admin" component={Dashboard} />
