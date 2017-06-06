@@ -41,6 +41,18 @@ class HelpDeskDetail extends Component {
                 </p>
               </div>
               <div className="clearfix">
+                <div className="right h5">
+                  <span className="hdd-category__name">
+                    <i className="hdd-category__icon hdd-category__icon--public" />
+                    Public,
+                  </span>
+                  <span className="hdd-category__name">
+                    <i className="hdd-category__icon hdd-category__icon--maintenance" />
+                    Maintenance
+                  </span>
+                </div>
+              </div>
+              <div className="clearfix">
                 <h1 className="bold h5">Detail Status</h1>
               </div>
             </Box>

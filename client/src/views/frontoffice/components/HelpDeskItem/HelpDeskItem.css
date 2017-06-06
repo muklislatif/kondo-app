@@ -39,6 +39,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 10;
     display: block;
 }
 
@@ -48,11 +49,13 @@
     left: 0;
     width: 40px;
     height: 35px;
-    background: #F2F2F2;
+    background: url('http://placehold.it/80x70') transparent no-repeat;
+    background-size: 40px 35px;
 }
 
 .hdi--public .hdi-issue-category__icon {
-    background: #F2F2F2;
+    background: url('http://placehold.it/80x70') transparent no-repeat;
+    background-size: 40px 35px;
 }
 
 .hdi-issue-category__name {

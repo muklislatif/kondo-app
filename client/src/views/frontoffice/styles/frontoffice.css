@@ -37,9 +37,10 @@ body {
     padding: 10px;
     border-right: 1px solid #E8E8E8;
     border-left: 1px solid #E8E8E8;
+    color: #4D4D4D;
     text-align: center;
     font-weight: bold;
-    color: #4D4D4D;
+    cursor: pointer;
 }
 
 .tab__list-item:first-child {

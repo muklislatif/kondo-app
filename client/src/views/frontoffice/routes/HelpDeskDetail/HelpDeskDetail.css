@@ -1,3 +1,7 @@
+.hdd-header {
+    padding-right: 60px;
+}
+
 .hdd-timestamps {
     position: absolute;
     top: 0;
@@ -24,4 +28,29 @@
     color: #4D4D4D;
     font-weight: 400;
     font-size: 11px;
+}
+
+.hdd-category__name {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding-left: 7px;
+    vertical-align: middle;
+}
+
+.hdd-category__icon {
+    display: inline-block;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.hdd-category__icon--public {
+    background-image: url('http://placehold.it/50x50');
+}
+
+.hdd-category__icon--maintenance {
+    background-image: url('http://placehold.it/50x50');
 }
