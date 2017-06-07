@@ -13,17 +13,11 @@ import Box from '../../components/Box';
 import UserMedia from '../../components/UserMedia';
 import BottomNav from '../../components/BottomNav';
 
-import * as actions from '../../../../actions/helpDeskActions';
-
 class HelpDeskDetail extends Component {
-  componentWillMount() {
-    this.props.dispatch(actions.loadHelpDesks());
-  }
-
   render() {
-    const helpDesks = this.props.helpDesks.entities.helpDesks;
+    let helpDesk = this.props.helpDesksAll[this.props.match.params.id];
 
-    if (!helpDesks) {
+    if (!helpDesk) {
       return (
         <div>Loading...</div>
       );
@@ -32,37 +26,37 @@ class HelpDeskDetail extends Component {
     return (
       <div>
         <SideMenu target="/help-desk">
-          {helpDesks[this.props.match.params.id].status === 'completed' ? 'Resolved Issues' : 'Open Issues'}
+          {helpDesk.status === 'completed' ? 'Resolved Issues' : 'Open Issues'}
         </SideMenu>
         <Wrapper>
           <div className="help-desk-detail clearfix">
             <Box className="p2 mb2">
               <div className="hdd-header relative clearfix">
                 <UserMedia
-                  name={helpDesks[this.props.match.params.id].member_name}
+                  name={helpDesk.member_name}
                   userRole="Owner"
                   avatarPath="http://placehold.it/100x100"
                 />
                 <div className="hdd-timestamps">
-                  <small title={helpDesks[this.props.match.params.id].created_at}>
-                  { Moment(helpDesks[this.props.match.params.id].created_at).fromNow()}
+                  <small title={helpDesk.created_at}>
+                    { Moment(helpDesk.created_at).fromNow() }
                   </small>
                 </div>
               </div>
               <div className="clearfix">
                 <p className="hdd-content h5">
-                  {helpDesks[this.props.match.params.id].content}
+                  {helpDesk.content}
                 </p>
               </div>
               <div className="clearfix">
                 <div className="right h5">
                   <span className="hdd-category__name">
                     <i className="hdd-category__icon hdd-category__icon--public" />
-                    { helpDesks[this.props.match.params.id].is_public ? 'Public' : 'Personal' },
+                    { helpDesk.is_public ? 'Public' : 'Personal' },
                   </span>
                   <span className="hdd-category__name">
                     <i className="hdd-category__icon hdd-category__icon--maintenance" />
-                    { helpDesks[this.props.match.params.id].category }
+                    { helpDesk.category }
                   </span>
                 </div>
               </div>
@@ -70,7 +64,6 @@ class HelpDeskDetail extends Component {
                 <h1 className="bold h5">Detail Status</h1>
               </div>
             </Box>
-
             <Box className="hdd-detail-item p2 mb2 h5">
               <span className="hdd-dropcaps">1.</span>
               <div className="clearfix">
@@ -80,7 +73,6 @@ class HelpDeskDetail extends Component {
                 Requested and has received by Management.
               </div>
             </Box>
-
             <Box className="hdd-detail-item p2 mb2 h5">
               <span className="hdd-dropcaps">2.</span>
               <div className="clearfix">
@@ -90,7 +82,6 @@ class HelpDeskDetail extends Component {
                 Management has assigned XXX to process.
               </div>
             </Box>
-
             <Box className="hdd-detail-item p2 mb2 h5">
               <span className="hdd-dropcaps">3.</span>
               <div className="clearfix">
@@ -100,7 +91,6 @@ class HelpDeskDetail extends Component {
                 The issue has been resolved.
               </div>
             </Box>
-
           </div>
         </Wrapper>
         <BottomNav />
@@ -111,8 +101,8 @@ class HelpDeskDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    helpDesks: state.helpDesks,
-    helpDesksResolved: state.helpDesksResolved,
+    helpDesksAll: Object.assign(state.helpDesks.entities.helpDesks,
+      state.helpDesksResolved.entities.helpDesksResolved),
   };
 }
 
