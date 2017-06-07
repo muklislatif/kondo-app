@@ -17,10 +17,36 @@ class HelpDeskDetail extends Component {
   render() {
     let helpDesk = this.props.helpDesksAll[this.props.match.params.id];
 
+
+    let categoryIconType = '';
+    let categoryIcon = '';
+
     if (!helpDesk) {
       return (
         <div>Loading...</div>
       );
+    } else {
+      switch (helpDesk.is_public) {
+        case true:
+          categoryIconType = 'hdd-category__icon--public';
+          break;
+        case false:
+          categoryIconType = 'hdd-category__icon--personal';
+          break;
+        default:
+          categoryIconType = '';
+      }
+
+      switch (helpDesk.category) {
+        case 'Maintenance':
+          categoryIcon = 'hdd-category__icon--maintenance';
+          break;
+        case 'House Keeping':
+          categoryIcon = 'hdd-category__icon--housekeeping';
+          break;
+        default:
+          categoryIcon = '';
+      }
     }
 
     return (
@@ -51,11 +77,11 @@ class HelpDeskDetail extends Component {
               <div className="clearfix">
                 <div className="right h5">
                   <span className="hdd-category__name">
-                    <i className="hdd-category__icon hdd-category__icon--public" />
+                    <i className={`hdd-category__icon ${categoryIconType}`} />
                     { helpDesk.is_public ? 'Public' : 'Personal' },
                   </span>
                   <span className="hdd-category__name">
-                    <i className="hdd-category__icon hdd-category__icon--maintenance" />
+                    <i className={`hdd-category__icon hdd-category__icon--category ${categoryIcon}`} />
                     { helpDesk.category }
                   </span>
                 </div>

@@ -18,12 +18,12 @@ class IssueForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.actions.addHelpDesk({
-      category: 'Maintenance',
+      category: this.inputCategory.value,
       content: this.input.value,
       created_at: Moment.utc().local(),
-      is_public: false,
+      is_public: this.inputType.value === '1' ? true : false,
       member_name: 'Arian Pradana',
-      status: 'in-progress',
+      status: 'requested',
       updated_at: null,
     });
     this.props.history.push('/help-desk');
@@ -36,21 +36,31 @@ class IssueForm extends Component {
           Report an Issue
         </SideMenu>
         <Wrapper>
-          <form onSubmit={(e) => this.handleSubmit(e)}>
+          <form onSubmit={e => this.handleSubmit(e)}>
             <div className="p2 mb2 clearfix">
               <div className="clearfix">
-                <select name="" id="" className="select select--popup">
+                <select
+                  className="select select--popup"
+                  ref={(node) => {
+                    this.inputType = node;
+                  }}
+                >
                   <option value="">Select Issue Type</option>
-                  <option value="1">Personal</option>
-                  <option value="2">Public</option>
+                  <option value="0">Personal</option>
+                  <option value="1">Public</option>
                 </select>
-                <select name="" id="" className="select select--popup">
+                <select
+                  className="select select--popup"
+                  ref={(node) => {
+                    this.inputCategory = node;
+                  }}
+                >
                   <option value="">Select Issue Category</option>
-                  <option value="1">House Keeping</option>
-                  <option value="2">Maintenance</option>
-                  <option value="3">Administration</option>
-                  <option value="4">Security</option>
-                  <option value="5">Others</option>
+                  <option value="House Keeping">House Keeping</option>
+                  <option value="Maintenance">Maintenance</option>
+                  <option value="Administration">Administration</option>
+                  <option value="Security">Security</option>
+                  <option value="Others">Others</option>
                 </select>
               </div>
               <div className="relative clearfix">

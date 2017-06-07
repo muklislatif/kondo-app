@@ -50,13 +50,21 @@
     left: 0;
     width: 40px;
     height: 35px;
-    background: url('http://placehold.it/80x70') transparent no-repeat;
+    background: url('./assets/icon-personal.png') transparent no-repeat;
     background-size: 40px 35px;
 }
 
+.hdi--personal:hover .hdi-issue-category__icon {
+    background-image: url('./assets/icon-personal-active.png');
+}
+
 .hdi--public .hdi-issue-category__icon {
-    background: url('http://placehold.it/80x70') transparent no-repeat;
+    background: url('./assets/icon-public.png') transparent no-repeat;
     background-size: 40px 35px;
+}
+
+.hdi--public:hover .hdi-issue-category__icon {
+    background-image: url('./assets/icon-public-active.png');
 }
 
 .hdi-issue-category__name {

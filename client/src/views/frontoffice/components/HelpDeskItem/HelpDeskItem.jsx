@@ -29,7 +29,7 @@ class HelpDeskItem extends Component {
         className={
           `help-desk-item clearfix p2 left-align
           ${statusClass}
-          ${this.props.helpDesk.is_public ? 'hdi--public' : ''}`
+          ${this.props.helpDesk.is_public ? 'hdi--public' : 'hdi--personal'}`
         }
       >
         <Link className="hdi-link-block" to={`/help-desk/${this.props.helpDesk.id}`} />

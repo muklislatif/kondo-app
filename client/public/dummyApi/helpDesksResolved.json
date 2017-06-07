@@ -11,7 +11,7 @@
   },
   {
     "id": 4,
-    "category": "Maintenance",
+    "category": "House Keeping",
     "content": "Lorem ipsum dolor sit amet.",
     "status": "completed",
     "is_public": false,
