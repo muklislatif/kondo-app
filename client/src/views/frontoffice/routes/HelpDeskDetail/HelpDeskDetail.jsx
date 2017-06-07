@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Moment from 'moment';
 
 import 'ace-css/css/ace.min.css';
 import 'normalize.css';
@@ -12,43 +13,56 @@ import Box from '../../components/Box';
 import UserMedia from '../../components/UserMedia';
 import BottomNav from '../../components/BottomNav';
 
+import * as actions from '../../../../actions/helpDeskActions';
+
 class HelpDeskDetail extends Component {
+  componentWillMount() {
+    this.props.dispatch(actions.loadHelpDesks());
+  }
+
   render() {
+    const helpDesks = this.props.helpDesks.entities.helpDesks;
+
+    if (!helpDesks) {
+      return (
+        <div>Loading...</div>
+      );
+    }
+
     return (
       <div>
         <SideMenu target="/help-desk">
-          Open Issues
+          {helpDesks[this.props.match.params.id].status === 'completed' ? 'Resolved Issues' : 'Open Issues'}
         </SideMenu>
         <Wrapper>
           <div className="help-desk-detail clearfix">
-
             <Box className="p2 mb2">
               <div className="hdd-header relative clearfix">
                 <UserMedia
-                  name="Arian Pradana"
+                  name={helpDesks[this.props.match.params.id].member_name}
                   userRole="Owner"
                   avatarPath="http://placehold.it/100x100"
                 />
                 <div className="hdd-timestamps">
-                  <small title="1 day ago">
-                    1 day ago
+                  <small title={helpDesks[this.props.match.params.id].created_at}>
+                  { Moment(helpDesks[this.props.match.params.id].created_at).fromNow()}
                   </small>
                 </div>
               </div>
               <div className="clearfix">
                 <p className="hdd-content h5">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores fugit accusantium officia cupiditate iusto beatae vero similique ducimus a incidunt laboriosam sequi modi voluptates debitis, sapiente rem consequuntur inventore. Doloribus.
+                  {helpDesks[this.props.match.params.id].content}
                 </p>
               </div>
               <div className="clearfix">
                 <div className="right h5">
                   <span className="hdd-category__name">
                     <i className="hdd-category__icon hdd-category__icon--public" />
-                    Public,
+                    { helpDesks[this.props.match.params.id].is_public ? 'Public' : 'Personal' },
                   </span>
                   <span className="hdd-category__name">
                     <i className="hdd-category__icon hdd-category__icon--maintenance" />
-                    Maintenance
+                    { helpDesks[this.props.match.params.id].category }
                   </span>
                 </div>
               </div>
@@ -96,7 +110,10 @@ class HelpDeskDetail extends Component {
 }
 
 function mapStateToProps(state) {
-  return { helpDesks: state.helpDesks };
+  return {
+    helpDesks: state.helpDesks,
+    helpDesksResolved: state.helpDesksResolved,
+  };
 }
 
 export default connect(mapStateToProps)(HelpDeskDetail);

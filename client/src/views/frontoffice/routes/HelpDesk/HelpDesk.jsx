@@ -20,14 +20,6 @@ class HelpDesk extends Component {
   }
 
   render() {
-    const helpDesks = this.props.helpDesks.filter(helpDesk => (
-      helpDesk.status !== 'completed'
-    ));
-
-    const helpDesksResolved = this.props.helpDesks.filter(helpDesk => (
-      helpDesk.status === 'completed'
-    ));
-
     return (
       <div>
         <SideMenu target="/">
@@ -46,22 +38,22 @@ class HelpDesk extends Component {
             </TabList>
             <TabPanel>
               {
-                helpDesks.map(helpDesk => (
+                this.props.helpDesks ? this.props.helpDesks.result.map(helpDesk => (
                   <HelpDeskItem
-                    key={helpDesk.id}
-                    helpDesk={helpDesk}
+                    key={helpDesk}
+                    helpDesk={this.props.helpDesks.entities.helpDesks[helpDesk]}
                   />
-                ))
+                )) : null
               }
             </TabPanel>
             <TabPanel>
               {
-                helpDesksResolved.map(helpDesk => (
+                this.props.helpDesksResolved ? this.props.helpDesksResolved.result.map(helpDesk => (
                   <HelpDeskItem
-                    key={helpDesk.id}
-                    helpDesk={helpDesk}
+                    key={helpDesk}
+                    helpDesk={this.props.helpDesksResolved.entities.helpDesksResolved[helpDesk]}
                   />
-                ))
+                )) : null
               }
             </TabPanel>
           </Tabs>
@@ -76,7 +68,10 @@ class HelpDesk extends Component {
 }
 
 function mapStateToProps(state) {
-  return { helpDesks: state.helpDesks };
+  return {
+    helpDesks: state.helpDesks,
+    helpDesksResolved: state.helpDesksResolved,
+  };
 }
 
 export default connect(mapStateToProps)(HelpDesk);

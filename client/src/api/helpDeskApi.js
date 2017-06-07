@@ -8,4 +8,9 @@ export default {
       .then(response => response.data)
       .catch(error => error)
   ),
+  getAllHelpDesksResolved: () => (
+    http.get(`${api}/dummyApi/helpDesksResolved.json`)
+      .then(response => response.data)
+      .catch(error => error)
+  ),
 };

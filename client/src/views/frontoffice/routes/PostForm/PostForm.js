@@ -10,7 +10,7 @@ import Wrapper from '../../components/Wrapper';
 import UserMedia from '../../components/UserMedia';
 import BottomNav from '../../components/BottomNav';
 
-import * as actions from '../../../../actions/postActions'
+import * as actions from '../../../../actions/postActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -20,7 +20,6 @@ class PostForm extends Component {
     this.props.actions.addPost({
       content: this.input.value
     });
-    // console.log(this.props.history);
     this.props.history.push('/community-feed');
   }
 
