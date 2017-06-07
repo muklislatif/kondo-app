@@ -15,6 +15,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `kondo_app`.`members` (
   `id` VARCHAR (36) NOT NULL,
   `name` VARCHAR (50) NOT NULL,
+  `username` VARCHAR (50) NOT NULL,
   `password` VARCHAR (140) NOT NULL,
   `email` VARCHAR (50) NOT NULL,
   `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,

@@ -1,7 +1,11 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const authMiddleware = require('./middlewares/auth');
 
+const {
+  auth,
+} = require('./auth');
 const {
   getMembers,
 } = require('./members');
@@ -19,7 +23,9 @@ router.use(bodyParser.urlencoded({
   extended: true,
 }));
 router.use(bodyParser.json());
-router.use(cookieParser());
+
+/** auth */
+router.post('/auth', auth);
 
 /** members */
 router.get('/members', getMembers);
@@ -27,8 +33,8 @@ router.get('/members', getMembers);
 /** posts */
 router.get('/posts', getPosts);
 router.get('/post/:id', getPostById);
-router.post('/post', createPost);
-router.post('/post/:id', updatePost);
-router.delete('/post/:id', deletePost);
+router.post('/post', authMiddleware, createPost);
+router.post('/post/:id', authMiddleware, updatePost);
+router.delete('/post/:id', authMiddleware, deletePost);
 
 module.exports = router;

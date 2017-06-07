@@ -7,7 +7,6 @@ const { logger } = require('../utils/logger');
 const migrationScript = fs.readFileSync(`${__dirname}/schema.sql`, 'utf8').split('####');
 
 const executeSQL = (query, idx, length) => db
-  .getConnection()
   .then(conn => conn.query(query))
   .then(() => logger.info(`[MIGRATION] [${1 + idx}/${length}]: ${query.split('\n').join(' ')}`))
   .catch(err => logger.error(`[MIGRATION] [${1 + idx}/${length}]: `, err));

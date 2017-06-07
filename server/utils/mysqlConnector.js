@@ -29,4 +29,4 @@ appState.on('terminate', () => {
   }, 2000);
 });
 
-module.exports = pool;
+module.exports = pool.getConnection();

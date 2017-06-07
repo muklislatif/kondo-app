@@ -1,7 +1,9 @@
 {
   "name": "kondo-server",
   "env": {
-    "APP_NAME": "name",
+    "APP_NAME": "kondo-server",
+    "APP_SECRET": "VfsxCc4TwktMvMq",
+    "APP_JWT_PREFIX": "KND-JWT:",
     "MYSQL_HOST": "localhost",
     "MYSQL_PORT": "3306",
     "MYSQL_USER": "root",
@@ -13,6 +15,7 @@
     "NODE_ENV": "development"
   },
   "env_production": {
+    "APP_SECRET": "AsH9GTMpPxbvMJy",
     "PORT": "80",
     "NODE_ENV": "production"
   }
