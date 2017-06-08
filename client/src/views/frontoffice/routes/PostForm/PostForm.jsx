@@ -70,7 +70,7 @@ PostForm.defaultProps = {
 };
 
 PostForm.propTypes = {
-  actions: PropTypes.objectOf(PropTypes.funct),
+  actions: PropTypes.objectOf(PropTypes.any),
   history: PropTypes.objectOf(PropTypes.any),
 };
 
