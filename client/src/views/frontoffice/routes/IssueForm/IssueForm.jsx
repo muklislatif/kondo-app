@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Moment from 'moment';
-import * as actions from '../../../../actions/helpDeskActions';
 
 import 'ace-css/css/ace.min.css';
 import 'normalize.css';
@@ -14,6 +14,8 @@ import Wrapper from '../../components/Wrapper';
 import UserMedia from '../../components/UserMedia';
 import BottomNav from '../../components/BottomNav';
 
+import * as actions from '../../../../actions/helpDeskActions';
+
 class IssueForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
@@ -21,7 +23,7 @@ class IssueForm extends Component {
       category: this.inputCategory.value,
       content: this.input.value,
       created_at: Moment.utc().local(),
-      is_public: this.inputType.value === '1' ? true : false,
+      is_public: this.inputType.value === '1',
       member_name: 'Arian Pradana',
       status: 'requested',
       updated_at: null,
@@ -94,12 +96,18 @@ class IssueForm extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { helpDesks: state.helpDesks };
-}
+IssueForm.defaultProps = {
+  actions: {},
+  history: {},
+};
+
+IssueForm.propTypes = {
+  actions: PropTypes.objectOf(PropTypes.funct),
+  history: PropTypes.objectOf(PropTypes.any),
+};
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) }
+  return { actions: bindActionCreators(actions, dispatch) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IssueForm);
+export default connect(null, mapDispatchToProps)(IssueForm);

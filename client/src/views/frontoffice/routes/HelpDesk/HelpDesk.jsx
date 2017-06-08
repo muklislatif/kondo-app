@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import 'ace-css/css/ace.min.css';
 import 'normalize.css';
@@ -20,6 +21,7 @@ class HelpDesk extends Component {
   }
 
   render() {
+    const { helpDesks, helpDesksResolved } = this.props;
     return (
       <div>
         <SideMenu target="/">
@@ -38,22 +40,22 @@ class HelpDesk extends Component {
             </TabList>
             <TabPanel>
               {
-                this.props.helpDesks ? this.props.helpDesks.result.map(helpDesk => (
+                helpDesks.result.map(helpDesk => (
                   <HelpDeskItem
                     key={helpDesk}
-                    helpDesk={this.props.helpDesks.entities.helpDesks[helpDesk]}
+                    helpDesk={helpDesks.entities.helpDesks[helpDesk]}
                   />
-                )) : null
+                ))
               }
             </TabPanel>
             <TabPanel>
               {
-                this.props.helpDesksResolved ? this.props.helpDesksResolved.result.map(helpDesk => (
+                helpDesksResolved.result.map(helpDesk => (
                   <HelpDeskItem
                     key={helpDesk}
-                    helpDesk={this.props.helpDesksResolved.entities.helpDesksResolved[helpDesk]}
+                    helpDesk={helpDesksResolved.entities.helpDesksResolved[helpDesk]}
                   />
-                )) : null
+                ))
               }
             </TabPanel>
           </Tabs>
@@ -66,6 +68,22 @@ class HelpDesk extends Component {
     );
   }
 }
+
+HelpDesk.defaultProps = {
+  helpDesks: {
+    result: [],
+    entities: {},
+  },
+  helpDesksResolved: {
+    result: [],
+    entities: {},
+  },
+};
+
+HelpDesk.propTypes = {
+  helpDesks: PropTypes.objectOf(PropTypes.any),
+  helpDesksResolved: PropTypes.objectOf(PropTypes.any),
+};
 
 function mapStateToProps(state) {
   return {

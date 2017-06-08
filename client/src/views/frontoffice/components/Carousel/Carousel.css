@@ -33,13 +33,13 @@
     margin: 0;
 }
 
-.crs-inner .slick-dots li button:before {
+.crs-inner .slick-dots li button::before {
     color: #CCC;
     font-size: 10px;
     opacity: 1;
 }
 
-.crs-inner .slick-dots li.slick-active button:before {
+.crs-inner .slick-dots li.slick-active button::before {
     color: #03A9F4;
 }
 

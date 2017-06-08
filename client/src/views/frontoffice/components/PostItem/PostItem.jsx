@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './PostItem.css';
+import PropTypes from 'prop-types';
 import Moment from 'moment';
+import './PostItem.css';
 
 import UserMedia from '../UserMedia/UserMedia';
 
 class PostItem extends Component {
-
-  _renderPinnedPost() {
+  static renderPinnedPost() {
     return (
       <div className="right">
         <span className="pi-pinned-post">
@@ -14,20 +14,22 @@ class PostItem extends Component {
           Pinned Post
         </span>
       </div>
-    )
+    );
   }
 
   render() {
-    const dateTime= this.props.post.created_at;
+    const { post } = this.props;
+    const dateTime = post.created_at;
     const formattedDT = Moment(dateTime).fromNow();
 
     return (
       <div className="post-item clearfix p2 left-align">
         <div className="pi-header clearfix">
           <UserMedia
-            name={this.props.post.member_name}
-            userRole={this.props.post.member_role}
-            avatarPath={this.props.post.member_avatar} />
+            name={post.member_name}
+            userRole={post.member_role}
+            avatarPath={post.member_avatar}
+          />
           <div className="pi-timestamps">
             <small title={dateTime}>
               {formattedDT}
@@ -35,14 +37,22 @@ class PostItem extends Component {
           </div>
         </div>
         <p className="pi-content clearfix">
-          {this.props.post.content}
+          {post.content}
         </p>
         <div className="pi-footer clearfix">
-          { this.props.post.is_pinned ? this._renderPinnedPost() : '' }
+          { post.is_pinned ? PostItem.renderPinnedPost() : null }
         </div>
       </div>
     );
   }
 }
+
+PostItem.defaultProps = {
+  post: {},
+};
+
+PostItem.propTypes = {
+  post: PropTypes.objectOf(PropTypes.any),
+};
 
 export default PostItem;

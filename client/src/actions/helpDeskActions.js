@@ -2,9 +2,16 @@ import { normalize, schema } from 'normalizr';
 import * as types from './actionTypes';
 import helpDeskApi from '../api/helpDeskApi';
 
+export function loadHelpDesksSuccess(helpDesks) {
+  return { type: types.LOAD_HELPDESKS_SUCCESS, helpDesks };
+}
+
+export function loadHelpDesksResolvedSuccess(helpDesksResolved) {
+  return { type: types.LOAD_HELPDESKS_RESOLVED_SUCCESS, helpDesksResolved };
+}
+
 export function loadHelpDesks() {
-  return function (dispatch) {
-    console.log('anjing!!');
+  return function thunk(dispatch) {
     return helpDeskApi.getAllHelpDesks().then((data) => {
       const helpDesksSchema = new schema.Entity('helpDesks');
       const helpDesksListSchema = new schema.Array(helpDesksSchema);
@@ -17,7 +24,7 @@ export function loadHelpDesks() {
 }
 
 export function loadHelpDesksResolved() {
-  return function (dispatch) {
+  return function thunk(dispatch) {
     return helpDeskApi.getAllHelpDesksResolved().then((data) => {
       const helpDesksResolvedSchema = new schema.Entity('helpDesksResolved');
       const helpDesksResolvedListSchema = new schema.Array(helpDesksResolvedSchema);
@@ -27,14 +34,6 @@ export function loadHelpDesksResolved() {
       throw (error);
     });
   };
-}
-
-export function loadHelpDesksSuccess(helpDesks) {
-  return { type: types.LOAD_HELPDESKS_SUCCESS, helpDesks };
-}
-
-export function loadHelpDesksResolvedSuccess(helpDesksResolved) {
-  return { type: types.LOAD_HELPDESKS_RESOLVED_SUCCESS, helpDesksResolved };
 }
 
 export function addHelpDesk(helpDesk) {
@@ -49,4 +48,3 @@ export function addHelpDesk(helpDesk) {
     });
   };
 }
-
