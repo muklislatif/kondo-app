@@ -71,6 +71,14 @@ body {
     font-size: 14px;
 }
 
+.select.select--popup.has-normal {
+    color: #4D4D4D;
+}
+
+.select.select--popup.has-error {
+    color: #A5A5A5;
+}
+
 .btn--primary {
     overflow: hidden;
     margin-bottom: 0;
@@ -87,10 +95,19 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.btn--primary:disabled {
+    background-color: #4CB8E8;
+}
+
 .action-container--stick-bottom {
     position: fixed;
     bottom: 60px;
     left: 0;
     width: 100%;
     background: #FFF;
+}
+
+.error {
+    display: inline-block;
+    color: #F44336;
 }

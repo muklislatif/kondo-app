@@ -36,7 +36,12 @@ const HelpDeskItem = ({ helpDesk }) => {
       <div className="hdi-header clearfix">
         <div className="hdi-issue-category">
           <i className="hdi-issue-category__icon" />
-          <span className="hdi-issue-category__name">{helpDesk.category}</span>
+          {
+            helpDesk.category ?
+              <span className="hdi-issue-category__name">
+                {helpDesk.category}
+              </span> : null
+          }
         </div>
         <div className="hdi-timestamps">
           <small title={dateTime}>
