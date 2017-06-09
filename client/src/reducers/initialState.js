@@ -1,3 +1,1 @@
-export default {
-  posts: [],
-};
+export default {};

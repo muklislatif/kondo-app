@@ -19,8 +19,8 @@ const CommunityFeed = ({ posts }) => (
       Community Feed
     </SideMenu>
     <Wrapper>
-      {posts.map(post => (
-        <PostItem key={post.id} post={post} />
+      {posts.result.map(post => (
+        <PostItem key={post} post={posts.entities.posts[post]} />
         ))}
       <FloatingActionButton target="/add-post">
         Add
@@ -31,11 +31,14 @@ const CommunityFeed = ({ posts }) => (
 );
 
 CommunityFeed.defaultProps = {
-  posts: [],
+  posts: {
+    result: [],
+    entities: {},
+  },
 };
 
 CommunityFeed.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object),
+  posts: PropTypes.objectOf(PropTypes.any),
 };
 
 function mapStateToProps(state) {
