@@ -1,0 +1,43 @@
+.list-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.li-item {
+    position: relative;
+    padding: 1em 1em 1em 80px;
+    border-bottom: 1px solid #E0E0E0;
+    word-break: break-word;
+    font-weight: bold;
+}
+
+.li-item:hover {
+    color: #03A9F4;
+}
+
+.li-avatar {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    display: block;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+}
+
+.li-small {
+    display: block;
+    font-weight: normal;
+}
+
+.li-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    text-indent: -99999px;
+    opacity: 0;
+}
