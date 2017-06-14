@@ -5,7 +5,7 @@ const { logger } = require('../../utils/logger');
 exports.getPosts = (req, res) => post.getAllPosts()
   .then(result => res.json(result))
   .catch((err) => {
-    logger.error(err.message);
+    logger.error('[POST:GETALL]', err.message);
     return res.status(500).json({ message: err.message });
   });
 
@@ -15,18 +15,19 @@ exports.getPostById = (req, res) => {
   return post.getPostById(id)
     .then(result => res.json(result))
     .catch((err) => {
-      logger.error(err.message);
+      logger.error('[POST:GETBYID]', err.message);
       return res.status(500).json({ message: err.message });
     });
 };
 
 /** Create new post */
 exports.createPost = (req, res) => {
-  const { subject, content } = req.body;
-  return post.createPost(subject, content)
-    .then(result => res.json(result))
+  const { subject, content, pinned, status } = req.body;
+  const userId = req.userId;
+  return post.createPost(userId, subject, content, pinned, status)
+    .then(() => res.json({ message: 'OK' }))
     .catch((err) => {
-      logger.error(err.message);
+      logger.error('[POST:CREATE]', err.message);
       return res.status(500).json({ message: err.message });
     });
 };
@@ -38,7 +39,7 @@ exports.updatePost = (req, res) => {
   return post.updatePost(id, subject, content)
     .then(result => res.json(result))
     .catch((err) => {
-      logger.error(err.message);
+      logger.error('[POST:UPDATE]', err.message);
       return res.status(500).json({ message: err.message });
     });
 };
@@ -49,7 +50,7 @@ exports.deletePost = (req, res) => {
   return post.deletePost(id)
     .then(() => res.json({ id }))
     .catch((err) => {
-      logger.error(err.message);
+      logger.error('[POST:DELETE]', err.message);
       return res.status(500).json({ message: err.message });
     });
 };

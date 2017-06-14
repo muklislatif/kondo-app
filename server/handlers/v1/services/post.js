@@ -1,16 +1,21 @@
+const uuid = require('uuid');
 const db = require('../../../utils/mysqlConnector');
 
 exports.getAllPosts = () => db
-  .then(conn => conn.query('SELECT * FROM posts'));
+  .then(conn => conn.query('SELECT * FROM posts'))
+  .then(([result, _]) => ({
+    posts: result,
+    length: result.length,
+  }));
 
 exports.getPostById = id => db
   .then(conn => conn.query('SELECT * FROM posts WHERE id=?', [id]))
-  .then(results => results[0]);
+  .then(([result, _]) => result[0]);
 
-exports.createPost = (subject, content) => db
-  .then(conn => conn.query('INSERT INTO posts VALUES(NULL, ?, ?, DEFAULT, DEFAULT)', [subject, content]));
+exports.createPost = (userId, subject, content, pinned, status) => db
+  .then(conn => conn.query('INSERT INTO posts VALUES(?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)', [uuid.v4(), subject, content, pinned ? 1 : 0, status, userId]));
 
-exports.updatePost = (id, subject, content) => db
+exports.updatePost = (id, userId, subject, content, pinned, status) => db
   .then(conn => conn.query('UPDATE posts SET ? WHERE id = ?', [{ subject, content }, id]));
 
 exports.deletePost = id => db

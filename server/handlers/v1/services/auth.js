@@ -10,16 +10,20 @@ exports.getToken = userId => new Promise((resolve, reject) => {
   }, SECRET, {
     expiresIn: Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 3),
   }, (err, token) => {
-    if (err) reject(err);
-    resolve(`${JWT_PREFIX}${token}`);
+    if (err) {
+      reject(err);
+    } else {
+      resolve(`${JWT_PREFIX}${token}`);
+    }
   });
 });
 
 exports.getUser = token => new Promise((resolve, reject) => {
   jwt.verify(token, SECRET, (err, payload) => {
-    if (err) reject(err);
-    resolve(payload.userId);
+    if (err || !payload) {
+      reject(err);
+    } else {
+      resolve(payload.userId);
+    }
   });
 });
-
-exports.deleteToken = token => redis.delAsync(token);
