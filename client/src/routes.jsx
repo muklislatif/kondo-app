@@ -15,6 +15,8 @@ import HelpDeskDetail from './views/frontoffice/routes/HelpDeskDetail';
 import IssueForm from './views/frontoffice/routes/IssueForm';
 import ServiceProvider from './views/frontoffice/routes/ServiceProvider';
 import ServiceProviderList from './views/frontoffice/routes/ServiceProviderList';
+import MonthlyReport from './views/frontoffice/routes/MonthlyReport';
+import MonthlyReportDetail from './views/frontoffice/routes/MonthlyReportDetail';
 
 // Back Office
 import Dashboard from './views/backoffice/Dashboard';
@@ -35,6 +37,8 @@ const Routes = () => (
         <Route path="/add-issue" component={IssueForm} />
         <Route exact path="/service-providers" component={ServiceProvider} />
         <Route path="/service-providers/:id" component={ServiceProviderList} />
+        <Route exact path="/monthly-report" component={MonthlyReport} />
+        <Route path="/monthly-report/:id" component={MonthlyReportDetail} />
       </Switch>
       <Switch>
         <Route exact path="/admin" component={Dashboard} />

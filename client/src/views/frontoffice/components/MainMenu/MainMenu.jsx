@@ -65,7 +65,7 @@ const MainMenu = () => (
       </Link>
     </li>
     <li className="mm-item">
-      <a href="/" className="mm-link">
+      <Link to="/monthly-report" className="mm-link clearfix">
         <div className="inline-block align-middle">
           <div className="mm-table table center">
             <div className="mm-table-cell table-cell align-middle col-12">
@@ -77,7 +77,7 @@ const MainMenu = () => (
           Monthly
           <br /> Report
         </div>
-      </a>
+      </Link>
     </li>
   </ul>
 );
