@@ -75,15 +75,19 @@
     background-repeat: no-repeat;
 }
 
-.li-small.orange {
-    color: #D75927;
-}
-
 .li-small i {
     font-style: normal;
     font-weight: lighter;
 }
 
-.li-info {
+.li--orange .li-info {
     color: #D75927;
+}
+
+.li--orange.li-item:hover {
+    color: #D75927;
+}
+
+.li--blue .li-info {
+    color: #03A9F4;
 }

@@ -32,33 +32,33 @@ class MyActivities extends Component {
         <Wrapper>
           <div className="service-provider clearfix">
             <ul className="list-reset m0 p0">
-              <ListItem hasAvatar>
+              <ListItem hasAvatar className="li--blue">
                 <img src={IconBillingPayment} alt="" className="li-avatar" />
                 <span>Payment : Sep `16</span>
                 <div className="clearfix li-info truncate">
-                  <small className="li-small orange">
+                  <small className="li-small">
                     Total Rp. 350.000 | <i>Paid - 2 Aug, 12:15</i>
                   </small>
                 </div>
                 <i className="li-arrow" />
                 <Link to="/" className="li-link">Payment : Sep `16</Link>
               </ListItem>
-              <ListItem hasAvatar>
+              <ListItem hasAvatar className="li--orange">
                 <img src={IconHelpDesk} alt="" className="li-avatar" />
                 <span>Parking : Sep `16</span>
                 <div className="clearfix li-info truncate">
-                  <small className="li-small orange">
+                  <small className="li-small">
                     Total Rp. 56.000 | <i>Requesting - 2 Aug, 12:15</i>
                   </small>
                 </div>
                 <i className="li-arrow" />
                 <Link to="/" className="li-link">Parking : Sep `16</Link>
               </ListItem>
-              <ListItem hasAvatar>
+              <ListItem hasAvatar className="li--orange">
                 <img src={IconHelpDesk} alt="" className="li-avatar" />
                 <span>Parking : Sep `16</span>
                 <div className="clearfix li-info truncate">
-                  <small className="li-small orange">
+                  <small className="li-small">
                     Total Rp. 246.000 | <i>Resolved - 2 Aug, 12:15</i>
                   </small>
                 </div>
@@ -69,7 +69,7 @@ class MyActivities extends Component {
                 <img src={ImageDummy} alt="" className="li-avatar" />
                 <span>John</span>
                 <div className="clearfix li-info truncate">
-                  <small className="li-small orange">
+                  <small className="li-small">
                     <i>Lorem ipsum dolor sit amet.</i>
                   </small>
                 </div>
