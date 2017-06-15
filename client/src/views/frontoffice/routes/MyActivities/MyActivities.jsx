@@ -54,7 +54,7 @@ class MyActivities extends Component {
                 <i className="li-arrow" />
                 <Link to="/" className="li-link">Parking : Sep `16</Link>
               </ListItem>
-              <ListItem hasAvatar className="li--orange">
+              <ListItem hasAvatar className="li--blue">
                 <img src={IconHelpDesk} alt="" className="li-avatar" />
                 <span>Parking : Sep `16</span>
                 <div className="clearfix li-info truncate">
