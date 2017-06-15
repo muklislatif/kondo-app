@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import root from 'window-or-global';
 
@@ -63,13 +64,13 @@ class Carousel extends Component {
                 alt="Lorem ipsum"
               />
             </a>
-            <a href="/" className="slick-item">
+            <Link to="/" className="slick-item">
               <img
                 className="crs-img img-responsive"
                 src={this.state.isMobile ? imgMobile : imgDesktop}
                 alt="Lorem ipsum"
               />
-            </a>
+            </Link>
             <a href="/" className="slick-item">
               <img
                 className="crs-img img-responsive"

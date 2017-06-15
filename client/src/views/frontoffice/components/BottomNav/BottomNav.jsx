@@ -10,9 +10,9 @@ const BottomNav = () => (
       </NavLink>
     </div>
     <div className="col col-4">
-      <a href="/" className="bn-link">
+      <NavLink exact to="/my-activities" activeClassName="active" className="bn-link">
         <i className="bn-icon bn-icon--2" />
-      </a>
+      </NavLink>
     </div>
     <div className="col col-4">
       <a href="/" className="bn-link">

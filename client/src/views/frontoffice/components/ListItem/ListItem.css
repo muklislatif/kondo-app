@@ -8,6 +8,7 @@
 
 .li-item.has-avatar {
     padding-left: 80px;
+    min-height: 80px;
 }
 
 .li-item:hover {
@@ -50,6 +51,18 @@
     background-size: 9.3px 15px;
 }
 
+.li-quote {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    display: block;
+    margin-top: -7.5px;
+    width: 17.3px;
+    height: 15px;
+    background: url('./assets/list-quote.png') transparent no-repeat;
+    background-size: 17.3px 15px;
+}
+
 .li-avatar {
     position: absolute;
     top: 50%;
@@ -60,4 +73,17 @@
     height: 50px;
     background-color: transparent;
     background-repeat: no-repeat;
+}
+
+.li-small.orange {
+    color: #D75927;
+}
+
+.li-small i {
+    font-style: normal;
+    font-weight: lighter;
+}
+
+.li-info {
+    color: #D75927;
 }
