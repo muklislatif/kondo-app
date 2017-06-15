@@ -10,6 +10,7 @@ import './ServiceProviderList.css';
 import SideMenu from '../../components/SideMenu';
 import Wrapper from '../../components/Wrapper';
 import BottomNav from '../../components/BottomNav';
+import ListItem from '../../components/ListItem';
 
 import ImageDummy from './assets/dummy-avatar.png';
 
@@ -27,31 +28,31 @@ class ServiceProviderList extends Component {
         </SideMenu>
         <Wrapper>
           <div className="service-provider clearfix">
-            <ul className="list-item">
-              <li className="clearfix li-item">
+            <ul className="list-reset m0 p0">
+              <ListItem hasAvatar>
                 <img src={ImageDummy} alt="" className="li-avatar" />
                 Dapur Cianjur
                 <small className="li-small clearfix">Tower A, 1st floor</small>
                 <a href="tel:+6285956566767" className="li-link">Dapur Cianjur</a>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem hasAvatar>
                 <img src={ImageDummy} alt="" className="li-avatar" />
                 Dapur Sumatra
                 <small className="li-small clearfix">Tower A, 1st floor</small>
                 <a href="tel:+6285956566767" className="li-link">Dapur Sumatra</a>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem hasAvatar>
                 <img src={ImageDummy} alt="" className="li-avatar" />
                 Dapur Jawa
                 <small className="li-small clearfix">Tower A, 1st floor</small>
                 <a href="tel:+6285956566767" className="li-link">Dapur Jawa</a>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem hasAvatar>
                 <img src={ImageDummy} alt="" className="li-avatar" />
                 Dapur Indonesia
                 <small className="li-small clearfix">Tower A, 1st floor</small>
                 <a href="tel:+6285956566767" className="li-link">Dapur Indonesia</a>
-              </li>
+              </ListItem>
             </ul>
           </div>
         </Wrapper>

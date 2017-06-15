@@ -1,0 +1,37 @@
+.pdf-viewer-nav {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    z-index: 20;
+    display: block;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.pdf-viewer-pager {
+    margin: 0;
+    padding: 0;
+}
+
+.btn--pdf-nav {
+    padding: 1em;
+    background: #FFF;
+}
+
+.pvn-icon {
+    display: block;
+    width: 15px;
+    height: 24px;
+    background-image: url('./assets/chevron-left.png');
+    background-size: 15px 24px;
+    content: '';
+    background-repeat: no-repeat;
+}
+
+.pvn-icon--arrow-left {
+    background-image: url('./assets/chevron-left.png');
+}
+
+.pvn-icon--arrow-right {
+    background-image: url('./assets/chevron-right.png');
+}

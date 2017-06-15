@@ -9,6 +9,7 @@ import './Carousel.css';
 class Carousel extends Component {
   constructor(props) {
     super(props);
+    this.updateDimensions = this.updateDimensions.bind(this);
     this.state = {
       isMobile: true,
     };
@@ -16,11 +17,11 @@ class Carousel extends Component {
 
   componentDidMount() {
     this.updateDimensions();
-    root.addEventListener('resize', this.updateDimensions.bind(this));
+    root.addEventListener('resize', this.updateDimensions);
   }
 
   componentWillUnmount() {
-    root.removeEventListener('resize', this.updateDimensions.bind(this));
+    root.removeEventListener('resize', this.updateDimensions);
   }
 
   updateDimensions() {

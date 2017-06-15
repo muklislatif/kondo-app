@@ -11,6 +11,7 @@ import './ServiceProvider.css';
 import SideMenu from '../../components/SideMenu';
 import Wrapper from '../../components/Wrapper';
 import BottomNav from '../../components/BottomNav';
+import ListItem from '../../components/ListItem';
 
 class ServiceProvider extends Component {
   constructor(props) {
@@ -26,31 +27,31 @@ class ServiceProvider extends Component {
         </SideMenu>
         <Wrapper>
           <div className="service-provider clearfix">
-            <ul className="list-item">
-              <li className="clearfix li-item">
+            <ul className="list-reset p0 m0">
+              <ListItem>
                 <i className="li-icon sp-icon--restaurants" />
                 Restaurants
                 <i className="li-arrow" />
                 <Link to="/service-providers/1" className="li-link">Restaurants</Link>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem>
                 <i className="li-icon sp-icon--daily-supplies" />
                 Daily Supplies
                 <i className="li-arrow" />
                 <Link to="/service-providers/2" className="li-link">Daily Supplies</Link>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem>
                 <i className="li-icon sp-icon--cleaning-services" />
                 Cleaning Services
                 <i className="li-arrow" />
                 <Link to="/service-providers/3" className="li-link">Cleaning Services</Link>
-              </li>
-              <li className="clearfix li-item">
+              </ListItem>
+              <ListItem>
                 <i className="li-icon sp-icon--laundry-services" />
                 Laundry Services
                 <i className="li-arrow" />
                 <Link to="/service-providers/4" className="li-link">Laundry Services</Link>
-              </li>
+              </ListItem>
             </ul>
           </div>
         </Wrapper>

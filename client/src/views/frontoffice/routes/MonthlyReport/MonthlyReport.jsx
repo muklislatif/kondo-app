@@ -11,6 +11,7 @@ import './MonthlyReport.css';
 import SideMenu from '../../components/SideMenu';
 import Wrapper from '../../components/Wrapper';
 import BottomNav from '../../components/BottomNav';
+import ListItem from '../../components/ListItem';
 
 class MonthlyReport extends Component {
   constructor(props) {
@@ -25,25 +26,25 @@ class MonthlyReport extends Component {
           Monthly Report
         </SideMenu>
         <Wrapper>
-          <ul className="list-item">
-            <li className="clearfix li-item">
+          <ul className="list-reset m0 p0">
+            <ListItem>
               <i className="li-icon mr-icon--date" />
               Apr `17
               <i className="li-arrow" />
               <Link to="/monthly-report/1" className="li-link">Apr `17</Link>
-            </li>
-            <li className="clearfix li-item">
+            </ListItem>
+            <ListItem>
               <i className="li-icon mr-icon--date" />
               Mar `17
               <i className="li-arrow" />
               <Link to="/monthly-report/1" className="li-link">Mar `17</Link>
-            </li>
-            <li className="clearfix li-item">
+            </ListItem>
+            <ListItem>
               <i className="li-icon mr-icon--date" />
               Feb `17
               <i className="li-arrow" />
               <Link to="/monthly-report/1" className="li-link">Feb `17</Link>
-            </li>
+            </ListItem>
           </ul>
         </Wrapper>
         <BottomNav />

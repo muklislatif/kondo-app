@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PDF from 'react-pdf-js';
 
 import 'ace-css/css/ace.min.css';
 import 'normalize.css';
