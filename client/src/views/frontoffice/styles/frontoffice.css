@@ -23,6 +23,11 @@ body {
     color: #D1D3D4;
 }
 
+a {
+    color: #03A9F4;
+    text-decoration: none;
+}
+
 /* Global Components */
 
 .tab__list {

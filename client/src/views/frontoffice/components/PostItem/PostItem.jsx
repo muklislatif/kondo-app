@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import Linkify from 'react-linkify';
 import './PostItem.css';
 
 import UserMedia from '../UserMedia/UserMedia';
@@ -36,9 +37,11 @@ class PostItem extends Component {
             </small>
           </div>
         </div>
-        <p className="pi-content clearfix">
-          {post.content}
-        </p>
+        <Linkify>
+          <p className="pi-content clearfix">
+            {post.content}
+          </p>
+        </Linkify>
         <div className="pi-footer clearfix">
           { post.is_pinned ? PostItem.renderPinnedPost() : null }
         </div>
