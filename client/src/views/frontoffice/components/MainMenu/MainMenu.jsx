@@ -14,7 +14,7 @@ const MainMenu = () => (
           </div>
         </div>
         <div className="inline-block align-middle">
-          Community ssssssssssss
+          Community
           <br /> Feed
         </div>
       </Link>
